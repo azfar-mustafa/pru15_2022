@@ -10,16 +10,20 @@ import logging
 def validate_string(negeri_sample, parlimen_sample):
     if '-' in negeri_sample:
         clean_negeri_name = negeri_sample.replace("-", " ")
+    else:
+        clean_negeri_name = negeri_sample
 
     if '-' in parlimen_sample:
         clean_parlimen_name = parlimen_sample.replace("-", " ")
+    else:
+        clean_parlimen_name = parlimen_sample
 
     return clean_negeri_name, clean_parlimen_name
 
     
 def create_data():
-    negeri = "pulau-pinang"
-    parlimen = "tasek-gelugor"
+    negeri = "wp-putrajaya"
+    parlimen = "putrajaya"
     
     headers = ['negeri', 'parlimen', 'calon', 'parti/gabungan', 'undi', 'majoriti']
     df = pd.DataFrame(columns = headers)
